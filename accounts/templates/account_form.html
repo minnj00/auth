@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block body %}
+<!-- 어떤 url 타고 들어왔냐에 따라 다른 h1 를 출력 -->
+{% if request.resolver_match.url_name == 'signup' %}
+    <h1>회원가입</h1>
+{% else %}
+    <h1>로그인</h1>
+{% endif %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" class ="btn btn-primary">
+
+
+</form>
+{% endblock %}
