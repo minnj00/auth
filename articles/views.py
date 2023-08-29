@@ -39,7 +39,8 @@ def create(request):
     }
 
     return render(request, 'form.html', context )
-        
+
+@login_required
 def comment_create(request, article_id):
     article = Article.objects.get(id=article_id)
 
