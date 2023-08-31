@@ -19,7 +19,6 @@ def index(request):
 def create(request):
     # if not request.user.is_authenticated:
     #     return redirect('accounts:login')
-    #login_required
 
     if request.method == 'POST':
         form = ArticleForm(request.POST)

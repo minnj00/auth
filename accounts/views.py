@@ -40,11 +40,17 @@ def login(request):
             auth_login(request, form.get_user())
             # http://127.0.0.1:8000/accounts/login/?next=/articles/create/
             next_url = request.GET.get('next')
+            # 이 부분은 login_required 기능 
+            setting.py 
+            LOGIN_URL = '/accounts/login/'
+            
 
 
             return redirect(next_url or 'articles:index')
             # -> 단축평가가 적용됨
             # next 인자가 url에 있을 때 => '/articles/create/'(=T, 어떤 값이 있으니깐) or 'articles:index'
+            # 이 경우는 login을 안하고 /article/create 했을 때 next가 포함돼서 url에 입력되는 경우
+
             # next 인자가 url에 없을 때 => None(F)or 'articles:index' 이므로 뒤에있는 값을 사용
             # 그냥 로그인을 해서 성공을 하면 index로 가지만
             # 로그아웃 상태에서 create로 가서 로그인을 성공하면 create위치로 다시 돌아감.
