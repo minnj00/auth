@@ -18,7 +18,7 @@ def signup(request):
             user = form.save() # form 을 save를 해야만 그 안의 데이터들이 밖으로 나오게 됨.
             # user에 form.save()한 인스턴스가 할당됨(User클래스의(결국 AbstractUser클래스의) column 데이터들이 할당됨.
             auth_login(request, user)
-            return redirect('accounts:login')
+            return redirect('accounts:index')
 
             # 좋은 UX를 생각해보기(회원가입 후 어떤 창으로 이동되는게 좋은지
 
@@ -41,8 +41,8 @@ def login(request):
             # http://127.0.0.1:8000/accounts/login/?next=/articles/create/
             next_url = request.GET.get('next')
             # 이 부분은 login_required 기능 
-            setting.py 
-            LOGIN_URL = '/accounts/login/'
+            # settings.py 
+            # LOGIN_URL = '/accounts/login/'
             
 
 
