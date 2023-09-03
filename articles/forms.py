@@ -21,6 +21,7 @@ class ArticleForm(forms.ModelForm):
         #     'title': forms.TextInput(attrs={'class': 'form-contrl'}),
         #     'content': forms.Textarea(attrs={'class': 'form-control'})
         # }
+        
 class CommentForm(forms.ModelForm):
 
     class Meta:
